@@ -22,6 +22,9 @@ public class ProjectileShooter : MonoBehaviour
         }
         */
         var proj = Instantiate(ProjectilePrefab, transform.position, Quaternion.identity);
-
+        /*if(proj.TryGetComponent(out Projectile projectilescript)){
+          projectilescript.owner = Owner;
+        }
+        */
     }
 }
