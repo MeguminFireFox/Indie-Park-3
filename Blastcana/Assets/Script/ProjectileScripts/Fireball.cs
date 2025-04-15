@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public  class Fireball : ProjectileClass
+public class Fireball : ProjectileClass
 {
-    void Start()
+    void OnEnable()
     {
         SpriteDirection();
     }
@@ -13,9 +13,11 @@ public  class Fireball : ProjectileClass
     {
         Movement();
     }
-public override void OnCollison()
+
+    public override void OnCollison()
     {
-        throw new System.NotImplementedException();
-        //Fait spawn une explosion + returne dans la pool.
+        //Fait spawn une explosion
+       // GameObject Explosion = _objectPool.GetPooledObject();
+        gameObject.SetActive(false);
     }
 }
