@@ -11,7 +11,7 @@ public class ProjectileShooter : MonoBehaviour
   [SerializeField] GameObject Owner;
   [SerializeField] ObjectPool _objectPool;
   //Sens d'orientation du tireur. définie ici pour debug.
-  private int Direction = -1;
+  private int Direction = 1;
 
   // Debug.
   void Start()
