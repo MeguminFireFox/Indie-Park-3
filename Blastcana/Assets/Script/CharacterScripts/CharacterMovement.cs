@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Rigidbody2D rb;
+    private Vector2 Movement;
+    public float PlayerSpeed;
+
+    public int Direction;
+
 
     // Update is called once per frame
-    void Update()
+    public void OnWalk(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        
+        Movement = context.ReadValue<Vector2>();
+        Direction = (int)Mathf.Sign(Movement.x);
+        rb.velocity = new Vector2(PlayerSpeed * Movement.x, rb.velocity.y);
+
     }
+    public void OnRun(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+
+        Movement = context.ReadValue<Vector2>();
+        Direction = (int)Mathf.Sign(Movement.x);
+        rb.velocity = new Vector2(PlayerSpeed * Movement.x * 1.25f, rb.velocity.y);
+
+    }
+
 }

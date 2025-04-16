@@ -11,7 +11,7 @@ public class ProjectileShooter : MonoBehaviour
   [SerializeField] GameObject Owner;
   [SerializeField] ObjectPool _objectPool;
   //Sens d'orientation du tireur. définie ici pour debug.
-  private int Direction = 1;
+  private int Direction;
 
   // Debug.
   void Start()
@@ -26,7 +26,7 @@ public class ProjectileShooter : MonoBehaviour
     // Cherche à obtenir la référence du script du propriétaire pour obtenir son sens d'orientation.
     if (Owner.TryGetComponent(out CharacterMovement characterscript))
     {
-      //Direction = characterscript.Direction;
+      Direction = characterscript.Direction;
     }
     else if (Owner.TryGetComponent(out MonsterMovement monsterscript))
     {
