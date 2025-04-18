@@ -7,25 +7,23 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     private Vector2 Movement;
     public float PlayerSpeed;
-
+    public bool Dashing = false;
     public int Direction;
 
-
-    // Update is called once per frame
-    public void OnWalk(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    //Fonction appeléee pour le moubement directionnel.
+    public void OnMove(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        Movement = context.ReadValue<Vector2>();
-        Direction = (int)Mathf.Sign(Movement.x);
-        rb.velocity = new Vector2(PlayerSpeed * Movement.x, rb.velocity.y);
+        if (!Dashing)
+        {
+            Movement = context.ReadValue<Vector2>();
+            rb.velocity = new Vector2(PlayerSpeed * Movement.x, rb.velocity.y);
+            if (Movement.x < -0.3f || Movement.x > 0.3f)
+            {
+                Direction = (int)Mathf.Sign(Movement.x);
+            }
+        }
 
     }
-    public void OnRun(UnityEngine.InputSystem.InputAction.CallbackContext context)
-    {
 
-        Movement = context.ReadValue<Vector2>();
-        Direction = (int)Mathf.Sign(Movement.x);
-        rb.velocity = new Vector2(PlayerSpeed * Movement.x * 1.25f, rb.velocity.y);
-
-    }
 
 }
