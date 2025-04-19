@@ -12,17 +12,19 @@ public class CharacterDash : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     public float DashStrength;
     private CharacterMovement MvtScript;
-    private bool TouchedGround;
+    private CharacterAttack AttackScript;
+    public bool TouchedGround;
 
     void Start()
     {
-        MvtScript = gameObject.GetComponent<CharacterMovement>();
+        MvtScript = GetComponent<CharacterMovement>();
+        AttackScript = GetComponent<CharacterAttack>();
     }
 
     //Fonction appeléee pour dash.
     public void OnDash(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        if (TouchedGround)
+        if (TouchedGround && !AttackScript.IsAttacking)
         {
             if (!MvtScript.Dashing)
             {
@@ -47,6 +49,8 @@ public class CharacterDash : MonoBehaviour
         rb.gravityScale = 1;
         MvtScript.Dashing = false;
     }
+
+    //Traque lorsque le joueur touche le sol, permettant la réutilisation du dash.
 
     void FixedUpdate()
     {
