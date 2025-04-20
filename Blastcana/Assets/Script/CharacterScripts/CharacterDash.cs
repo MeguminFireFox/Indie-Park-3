@@ -13,12 +13,14 @@ public class CharacterDash : MonoBehaviour
     public float DashStrength;
     private CharacterMovement MvtScript;
     private CharacterAttack AttackScript;
+    private CharacterMana _characterMana;
     public bool TouchedGround;
 
     void Start()
     {
         MvtScript = GetComponent<CharacterMovement>();
         AttackScript = GetComponent<CharacterAttack>();
+        _characterMana = GetComponent<CharacterMana>();
     }
 
     //Fonction appeléee pour dash.
@@ -49,9 +51,30 @@ public class CharacterDash : MonoBehaviour
         rb.gravityScale = 1;
         MvtScript.Dashing = false;
     }
+    public void OnSuperDash(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        if (TouchedGround && !AttackScript.IsAttacking && _characterMana.Mana > _characterMana.FireRequirement)
+        {
+            if (!MvtScript.Dashing)
+            {
+                StartCoroutine(SuperDashingRoutine());
+            }
+        }
+    }
+    IEnumerator SuperDashingRoutine()
+    {
+        TouchedGround = false;
+        rb.velocity = new Vector2(DashStrength * Vector2.right.x * 1.25f * MvtScript.Direction, 0);
+        MvtScript.Dashing = true;
+        rb.gravityScale = 0;
+
+        yield return new WaitForSeconds(0.3f);
+
+        rb.gravityScale = 1;
+        MvtScript.Dashing = false;
+    }
 
     //Traque lorsque le joueur touche le sol, permettant la réutilisation du dash.
-
     void FixedUpdate()
     {
         if (!TouchedGround)

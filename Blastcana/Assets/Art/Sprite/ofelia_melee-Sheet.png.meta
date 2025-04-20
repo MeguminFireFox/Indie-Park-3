@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fae2064ecf2728249b1ef2801421d27e
+guid: 070a7d1e69661ad4e834044f7aad3bb7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -98,7 +98,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ofelia_run-Sheet_0
+      name: ofelia_melee-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,20 +118,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.4, y: 0.5}
+      pivot: {x: 0.45, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b411739c919fce94fb0ac26f7d4d77c3
-      internalID: 1672343866
+      spriteID: 403d216a4003e854f81e489229cd6657
+      internalID: -1892931103
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ofelia_run-Sheet_1
+      name: ofelia_melee-Sheet_1
       rect:
         serializedVersion: 2
         x: 64
@@ -139,20 +139,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.4, y: 0.5}
+      pivot: {x: 0.45, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5000d62b797e5904d92aa376e1ac7c99
-      internalID: -1836088455
+      spriteID: 8caed8f3d16bb674b8d8fa9b88781025
+      internalID: 2007074554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ofelia_run-Sheet_2
+      name: ofelia_melee-Sheet_2
       rect:
         serializedVersion: 2
         x: 128
@@ -160,14 +160,77 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.4, y: 0.5}
+      pivot: {x: 0.45, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 680ce012db47b274eb94905dbd34a05d
-      internalID: -1487043954
+      spriteID: bc77f6a982aa32440a7745a5e46c3e0e
+      internalID: 1770852369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ofelia_melee-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.45, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e832d7a391a13f46bcd2a8cbd48f38b
+      internalID: -693203748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ofelia_melee-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.45, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c67d1618b0d7994d9b746c28d23e103
+      internalID: 1087863327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ofelia_melee-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.45, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e61397932b79f8f4e9bb5ddc051139e8
+      internalID: -983576686
       vertices: []
       indices: 
       edges: []
@@ -183,9 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ofelia_run-Sheet_0: 1672343866
-      ofelia_run-Sheet_1: -1836088455
-      ofelia_run-Sheet_2: -1487043954
+      ofelia_melee-Sheet_0: -1892931103
+      ofelia_melee-Sheet_1: 2007074554
+      ofelia_melee-Sheet_2: 1770852369
+      ofelia_melee-Sheet_3: -693203748
+      ofelia_melee-Sheet_4: 1087863327
+      ofelia_melee-Sheet_5: -983576686
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

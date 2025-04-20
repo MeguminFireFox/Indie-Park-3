@@ -10,7 +10,10 @@ public class CharacterJump : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     private CharacterMovement MvtScript;
     private CharacterAttack AttackScript;
+    private CharacterMana _characterMana;
+
     public float JumpStrength;
+    public bool SuperJump;
 
     void Start()
     {
@@ -22,10 +25,22 @@ public class CharacterJump : MonoBehaviour
     //Fonction appeléee pour sauter.
     public void OnJump(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        if (!MvtScript.Dashing  && !AttackScript.IsAttacking)
+        if (!MvtScript.Dashing && !AttackScript.IsAttacking)
             if (IsGrounded())
             {
+                SuperJump = false;
                 rb.velocity = Vector2.up * JumpStrength;
+            }
+    }
+
+    public void OnSuperJump(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        if (!MvtScript.Dashing && !AttackScript.IsAttacking && _characterMana.Mana > _characterMana.SuperJumpRequirement)
+            if (IsGrounded())
+            {
+                _characterMana.Mana =_characterMana.Mana - 10;
+                SuperJump = true;
+                rb.velocity = Vector2.up * JumpStrength * 1.5f;
             }
     }
 

@@ -16,7 +16,6 @@ public class CharacterMovement : MonoBehaviour
     {
         CharacterSprite = GetComponent<SpriteRenderer>();
         AttackScript = GetComponent<CharacterAttack>();
-
     }
 
     //Fonction appeléee pour le moubement directionnel.

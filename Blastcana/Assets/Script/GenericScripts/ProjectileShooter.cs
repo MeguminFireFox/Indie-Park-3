@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -12,12 +13,9 @@ public class ProjectileShooter : MonoBehaviour
   [SerializeField] ObjectPool _objectPool;
   //Sens d'orientation du tireur. définie ici pour debug.
   private int Direction;
+  private CharacterMana _characterMana;
+  private bool CanShoot; 
 
-  // Debug.
-  void Start()
-  {
-    OnFire();
-  }
   /// <summary>
   /// Fonction a appeler pour tirer un projectile.
   /// </summary>
@@ -27,13 +25,18 @@ public class ProjectileShooter : MonoBehaviour
     if (Owner.TryGetComponent(out CharacterMovement characterscript))
     {
       Direction = characterscript.Direction;
+      _characterMana = GetComponent<CharacterMana>();
+      CanShoot = _characterMana.Mana > _characterMana.FireRequirement;
     }
     else if (Owner.TryGetComponent(out MonsterMovement monsterscript))
     {
       //Direction = monsterscript.Direction;
+      CanShoot = true;
     }
 
     // SetActive le projectile de la pool devant le tireur en fonction de son orientation.
+    if(CanShoot){
+    
     GameObject Projectile = _objectPool.GetPooledObject();
     if (Projectile != null)
     {
@@ -41,14 +44,12 @@ public class ProjectileShooter : MonoBehaviour
       Projectile.transform.rotation = Owner.transform.rotation;
       Projectile.SetActive(true);
     }
-
-
     // Donne la référence du tireur et son orientation au projectile instancié.
     if (Projectile.TryGetComponent(out ProjectileClass projectilescript))
     {
       projectilescript.Direction = Direction;
       projectilescript.Owner = Owner;
     }
-
+    }
   }
 }
