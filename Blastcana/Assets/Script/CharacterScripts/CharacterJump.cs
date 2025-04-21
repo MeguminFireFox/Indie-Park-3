@@ -19,10 +19,10 @@ public class CharacterJump : MonoBehaviour
     {
         MvtScript = gameObject.GetComponent<CharacterMovement>();
         AttackScript = GetComponent<CharacterAttack>();
-
+        _characterMana = GetComponent<CharacterMana>();
     }
 
-    //Fonction appeléee pour sauter.
+    //Fonction appelée pour sauter.
     public void OnJump(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
         if (!MvtScript.Dashing && !AttackScript.IsAttacking)
@@ -35,10 +35,11 @@ public class CharacterJump : MonoBehaviour
 
     public void OnSuperJump(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
+
         if (!MvtScript.Dashing && !AttackScript.IsAttacking && _characterMana.Mana > _characterMana.SuperJumpRequirement)
             if (IsGrounded())
             {
-                _characterMana.Mana =_characterMana.Mana - 10;
+                _characterMana.Mana -=  _characterMana.SuperJumpRequirement;
                 SuperJump = true;
                 rb.velocity = Vector2.up * JumpStrength * 1.5f;
             }

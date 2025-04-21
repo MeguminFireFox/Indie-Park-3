@@ -5818,7 +5818,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 901626850}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.3238087, y: -2.9586666, z: -0.036938325}
   m_LocalScale: {x: 3.14, y: 3.14, z: 3.14}
   m_ConstrainProportionsScale: 1
@@ -7680,18 +7680,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1999768986}
-        m_TargetAssemblyTypeName: CharacterDash, Assembly-CSharp
-        m_MethodName: OnDash
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_ActionId: bc818a35-fd56-4343-a816-2dca05a9760d
     m_ActionName: Character/Dash
   - m_PersistentCalls:
@@ -7724,9 +7712,9 @@ MonoBehaviour:
     m_ActionName: Character/Fire[/Mouse/rightButton]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1999768985}
-        m_TargetAssemblyTypeName: CharacterAttack, Assembly-CSharp
-        m_MethodName: OnSuperAttack
+      - m_Target: {fileID: 1999768986}
+        m_TargetAssemblyTypeName: CharacterDash, Assembly-CSharp
+        m_MethodName: OnSuperDash
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8029,6 +8017,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1c3c7e973b83984fbf9ccf5e1225aae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HealthBar: {fileID: 1565196172}
+  _damageable: {fileID: 1999768992}
   _animator: {fileID: 1999768991}
 --- !u!114 &1999768994
 MonoBehaviour:
@@ -8042,6 +8032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 631987031408d1c4eae12d2eb7ef7a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ManaBar: {fileID: 672105922}
   Mana: 0
   ManaMax: 100
   SuperAttackRequirement: 10
@@ -8159,5 +8150,5 @@ SceneRoots:
   - {fileID: 1247645113}
   - {fileID: 1557575459}
   - {fileID: 1852763389}
-  - {fileID: 901626855}
   - {fileID: 1639376254}
+  - {fileID: 901626855}

@@ -25,14 +25,18 @@ public class CharacterAttack : MonoBehaviour
     //Fonction appelée pour lancer l'attaque de mêlée.
     public void OnAttack(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
+        if(!IsAttacking)
         SuperAttack = false;
         StartCoroutine(AttackRoutine());
     }
 
     public void OnSuperAttack(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        if(_CharacterMana.Mana > _CharacterMana.SuperAttackRequirement){
+        Debug.Log("SuperAttackk");
+
+        if(!IsAttacking && _CharacterMana.Mana >= _CharacterMana.SuperAttackRequirement){
         SuperAttack = true;
+        _CharacterMana.Mana -= _CharacterMana.SuperAttackRequirement;
         StartCoroutine(AttackRoutine());
         }
     }

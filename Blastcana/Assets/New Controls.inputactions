@@ -234,9 +234,9 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "One Modifier",
+                    "name": "Button With One Modifier",
                     "id": "4e5e0f41-7702-42af-8a6b-404627aabd42",
-                    "path": "OneModifier(overrideModifiersNeedToBePressedFirst=true)",
+                    "path": "ButtonWithOneModifier(overrideModifiersNeedToBePressedFirst=true)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -245,8 +245,8 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "modifier",
-                    "id": "9ee33724-0a85-4abb-a9d0-a0d08bbf67f5",
+                    "name": "Modifier",
+                    "id": "184b5736-3a7d-450c-ae06-6c49f6609e84",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
@@ -256,8 +256,8 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "binding",
-                    "id": "184b5736-3a7d-450c-ae06-6c49f6609e84",
+                    "name": "Button",
+                    "id": "9ee33724-0a85-4abb-a9d0-a0d08bbf67f5",
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
@@ -267,9 +267,9 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "One Modifier",
+                    "name": "Button With One Modifier",
                     "id": "31d02cb7-11c5-46c8-8c8a-46674ddedf2e",
-                    "path": "OneModifier(overrideModifiersNeedToBePressedFirst=true)",
+                    "path": "ButtonWithOneModifier(overrideModifiersNeedToBePressedFirst=true)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -278,19 +278,8 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "modifier",
+                    "name": "Modifier",
                     "id": "9a7a9a11-1c67-4043-b4a9-08f6796cba6c",
-                    "path": "<Gamepad>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SuperMelee",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "binding",
-                    "id": "cd4d000a-75f4-4e96-bee5-76cd148bd029",
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
@@ -300,9 +289,20 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "One Modifier",
-                    "id": "21f5a585-ec17-4b6d-95f6-e28f5ee4eae3",
-                    "path": "OneModifier(overrideModifiersNeedToBePressedFirst=true)",
+                    "name": "Button",
+                    "id": "cd4d000a-75f4-4e96-bee5-76cd148bd029",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SuperMelee",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Button With One Modifier",
+                    "id": "db5f3d45-f73d-4975-82a0-a4d204325f09",
+                    "path": "ButtonWithOneModifier(overrideModifiersNeedToBePressedFirst=true)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -311,8 +311,8 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "modifier",
-                    "id": "8c30402a-bad7-4f20-b137-dd059e57c061",
+                    "name": "Modifier",
+                    "id": "ba258f6f-60b5-4b65-834e-37877fabab8b",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
@@ -322,8 +322,8 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "binding",
-                    "id": "dd5d9a74-4eaa-4089-9238-a60ed93ef604",
+                    "name": "Button",
+                    "id": "6f337225-f939-4073-a5d7-956ff2f87916",
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",

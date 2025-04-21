@@ -36,7 +36,7 @@ public class CharacterDash : MonoBehaviour
     }
 
     /// <summary>
-    /// Coroutine s'occupant du dash du joueur).
+    /// Coroutine s'occupant du dash du joueur.
     /// </summary>
     /// <returns></returns>
     IEnumerator DashingRoutine()
@@ -53,7 +53,8 @@ public class CharacterDash : MonoBehaviour
     }
     public void OnSuperDash(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        if (TouchedGround && !AttackScript.IsAttacking && _characterMana.Mana > _characterMana.FireRequirement)
+        Debug.Log("superdashhh");
+        if (TouchedGround && !AttackScript.IsAttacking && _characterMana.Mana >= _characterMana.SuperDashRequirement)
         {
             if (!MvtScript.Dashing)
             {
@@ -63,6 +64,7 @@ public class CharacterDash : MonoBehaviour
     }
     IEnumerator SuperDashingRoutine()
     {
+        _characterMana.Mana -= _characterMana.SuperDashRequirement;
         TouchedGround = false;
         rb.velocity = new Vector2(DashStrength * Vector2.right.x * 1.25f * MvtScript.Direction, 0);
         MvtScript.Dashing = true;
